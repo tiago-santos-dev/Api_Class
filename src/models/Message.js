@@ -1,19 +1,17 @@
 const mongoose = require ('mongoose');
-const mongoosePaginate = require('mongoose-paginate');
+
+// const mongoosePaginate = require('mongoose-paginate');
+
 const MessageSchema = new  mongoose.Schema({
-    from : {
+    origin : {
         type : String,
         required : true,        
     },
-    to : {
+    destiny : {
         type : String,
         required : true,
     },
     message : {
-        type : String,
-        required : true,
-    },
-    apiurl: {
         type : String,
         required : true,
     },
@@ -23,6 +21,6 @@ const MessageSchema = new  mongoose.Schema({
     }
 })
 
-MessageSchema.plugin(mongoosePaginate);
+// MessageSchema.plugin(mongoosePaginate);
 
 mongoose.model ('Message' , MessageSchema);

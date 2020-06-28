@@ -14,19 +14,23 @@ const message = mongoose.model('Message');
 module.exports = {
 
     async index(request, response){
-        
-    const { page = 1 } = request.query;
 
-    //Controla a quantidade de itens exibidos por pagina
-    const Messages = await message.paginate({ }, {page , limit: 10}); 
+    const Messages = await message.find(); 
 
     return response.json(Messages);
 
     },
 
     async send(request, response){
-        const Message  = await message.create(request.body);
-        
-        return response.json(Message);
+
+        try {
+            const Message  = await message.create(request.body);
+            
+            return response.json(request.body);
+
+            } catch (error) {
+            return response.status(400).json({error: error.message});
+            }
+
         }
 }
