@@ -1,0 +1,25 @@
+{
+  "name": "api_class",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dir": "^0.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20",
+    "mongoose-paginate": "^5.0.3",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
